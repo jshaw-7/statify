@@ -1,0 +1,29 @@
+{% extends "songs.html" %}
+
+{% block title %}
+    Songs
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <table id = 'data' class="table">
+        <tr>
+            <th>songs (last month) </th>
+
+        </tr>
+        {% for song in songs %}
+            <tr>
+                <td>
+                    <a href="{{ song[1] }}" target = "_blank" >
+                      <div style="height:100%;width:100%" text-decoration = "none;">
+                        {{ song[0] }}
+                      </div>
+                    </a>
+                  </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

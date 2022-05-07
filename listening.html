@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Currently Listening
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <table class="table">
+
+      {% if listening[1] %}
+          <tr>
+              <td>
+                <a href="{{ listening[1] }}" target = "_blank" >
+                  <div style="height:100%;width:100%" text-decoration = "none;">
+                    {{ listening[0] }}
+                  </div>
+              </a>
+            </td>
+          </tr>
+      {% else %}
+      <tr>
+        <td>
+            <div style="height:100%;width:100%" text-decoration = "none;">
+              {{ listening[0] }}
+            </div>
+      </td>
+    </tr>
+      {% endif %}
+  </table>
+</div>
+
+{% endblock %}

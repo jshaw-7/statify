@@ -1,0 +1,79 @@
+nav .navbar-text .green
+{
+    color: #2e944b;
+    font-size: 275%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+nav .nav-item
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top:5%;
+    padding-bottom:5%;
+    font-size: 150%;
+    position: relative;
+}
+
+body
+{
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+a:link
+{
+    text-decoration: none;
+    color: #2e944b;
+}
+a:visited
+{
+    text-decoration: none;
+    color: #2e944b;
+}
+
+#homebox {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.hb-s {
+    flex: 10%;
+}
+
+#hb-main {
+    flex: 80%;
+    flex-direction: column;
+    align-items: left;
+    background-color: hotpink;
+    filter: drop-shadow(0 0 0.75rem #2e944b);
+}
+
+.hb-i {
+    flex: 20%;
+}
+
+.hb-b {
+    padding: 2.2%;
+    margin: 0px;
+    flex: 80%;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.blurb {
+    display: flex;
+    ;
+    flex-direction: row;
+    align-items: start;
+    padding-bottom: 10px;
+}
+
+#welcome {
+    font-size: 3em;
+    padding: 1em;
+    padding-top: 0.5em;
+    color: #2e944b;
+    font-family: Comic Sans MS;
+}

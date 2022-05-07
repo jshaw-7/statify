@@ -1,0 +1,29 @@
+{% extends "artists.html" %}
+
+{% block title %}
+    Artists
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <table id = 'data' class="table">
+        <tr>
+            <th>artists (all time) </th>
+
+        </tr>
+        {% for artist in artists %}
+            <tr>
+                <td>
+                    <a href="{{ artist[1] }}" target = "_blank" >
+                      <div style="height:100%;width:100%" text-decoration = "none;">
+                        {{ artist[0] }}
+                      </div>
+                    </a>
+                  </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
