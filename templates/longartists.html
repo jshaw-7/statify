@@ -1,10 +1,26 @@
-{% extends "artists.html" %}
+{% extends "index.html" %}
 
 {% block title %}
     Artists
 {% endblock %}
 
 {% block main %}
+
+<hr class = 'line' size = '5'>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a style="text-decoration: none;" class= "navbar-text"><span id = "green">Top Artists</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+<div class="collapse navbar-collapse">
+    <ul class="navbar-nav ms auto">
+        <li class="nav-item"><a class="nav-link" href="/shortartists">last month</a></li>
+        <li class="nav-item"><a class="nav-link" href="/mediumartists">last six months</a></li>
+        <li class="nav-item"><a class="nav-link" href="/longartists">all time</a></li>
+    </ul>
+</div>
+</nav>
 
 <div class="container">
     <table id = 'data' class="table">

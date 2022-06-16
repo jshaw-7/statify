@@ -1,10 +1,7 @@
 import os
-import requests
-import urllib.parse
 from cs50 import SQL
 
 from flask import redirect, render_template, request, session
-from functools import wraps
 
 import sys
 import spotipy
@@ -14,41 +11,9 @@ from spotipy.oauth2 import SpotifyOAuth
 
 global sp
 
-db = SQL("sqlite:///users.db")
-
 client_id ='b02eba6bbf4a48a484c525c15555b616'
 client_secret = '3b9d813cd07e4bc5acfa39c3c3659dce'
 redirect_uri = "http://localhost:8080/callback"
-
-def apology(message, code=400):
-    """Render message as an apology to user."""
-    def escape(s):
-        """
-        Escape special characters.
-
-        https://github.com/jacebrowning/memegen#special-characters
-        """
-        for old, new in [("-", "--"), (" ", "-"), ("_", "__"), ("?", "~q"),
-                         ("%", "~p"), ("#", "~h"), ("/", "~s"), ("\"", "''")]:
-            s = s.replace(old, new)
-        return s
-    return render_template("apology.html", top=code, bottom=escape(message)), code
-
-def get_id(track_name: str, token: str) -> str:
-    headers = {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Authorization': f'Bearer ' + token}
-    params = [('q', track_name), ('type', 'track')]
-    try:
-        response = requests.get('https://api.spotify.com/v1/search',
-                    headers = headers, params = params, timeout = 5)
-        json = response.json()
-        first_result = json['tracks']['items'][0]
-        track_id = first_result['id']
-        return track_id
-    except:
-        return None
 
 def top_songs(sp):
     scope = 'user-top-read'

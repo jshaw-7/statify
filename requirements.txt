@@ -19,7 +19,6 @@ colorama==0.4.3
 compare50==1.2.6
 cryptography==36.0.2
 cs50==9.0.0
-CS50-VSIX-Client @ file:///tmp/cs50.vsix/python-clients/cs50vsix-client
 cssselect2==0.5.0
 defusedxml==0.7.1
 docutils==0.15.2

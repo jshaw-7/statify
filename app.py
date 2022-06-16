@@ -1,15 +1,9 @@
 import os
-from datetime import datetime
-from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
-from tempfile import mkdtemp
-from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, top_songs, allow_user, top_artists, read_playlists, currently_listening
+from helpers import top_songs, allow_user, top_artists, read_playlists, currently_listening
 
-from urllib.request import urlretrieve
-from urllib.parse import quote
 
 # Configure application
 app = Flask(__name__)
@@ -21,9 +15,6 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-
-
-db = SQL("sqlite:///users.db")
 
 @app.after_request
 def after_request(response):
@@ -38,21 +29,6 @@ def index():
     global sp
     sp = None
     return render_template("homepage.html", sp=sp)
-
-
-@app.route("/misc")
-def albums():
-    return render_template("misc.html")
-@app.route("/playlists")
-def playlists():
-    playlists = read_playlists(sp)
-    return render_template("playlists.html", playlists = playlists)
-
-@app.route("/listening")
-def listening():
-    listening = currently_listening(sp)
-    return render_template("listening.html", listening = listening)
-
 
 @app.route("/songs")
 def songs():
@@ -73,7 +49,6 @@ def longsongs():
     songs_short, songs_medium, songs_long = top_songs(sp)
     return render_template("longsongs.html",songs=songs_long)
 
-
 @app.route("/artists")
 def artists():
     return render_template("artists.html")
@@ -93,11 +68,6 @@ def longartists():
     artists_short, artists_medium, artists_long = top_artists(sp)
     return render_template("longartists.html",artists=artists_long)
 
-
-@app.route("/loading")
-def loading():
-    return render_template('loading.html')
-
 @app.route("/allow")
 def allow():
     global sp
@@ -106,9 +76,19 @@ def allow():
 
 @app.route("/logout")
 def logout():
-
-    # Forget any user_id
     sp = None
-    # Redirect user to login form
     return render_template('homepage.html', sp=sp)
 
+@app.route("/homepage")
+def homepage():
+    return render_template('homepage.html')
+
+@app.route("/playlists")
+def playlists():
+    playlists = read_playlists(sp)
+    return render_template('playlists.html', playlists=playlists)
+
+@app.route("/listening")
+def listening():
+    listening = currently_listening(sp)
+    return render_template("listening.html", listening = listening)
