@@ -77,9 +77,8 @@ a:visited
 
 #welcome {
     font-size: 3em;
-    padding: 1em;
-    padding-top: 0.5em;
     color: #2e944b;
+    padding: .5vw;
     font-family: "Helvetica", "Arial", sans-serif;
 }
 
