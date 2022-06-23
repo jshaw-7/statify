@@ -1,0 +1,111 @@
+#green
+{
+    color: #2e944b;
+    font-size: 3.75vw;
+    margin-left: 2vw;
+    margin-right:2vw;
+}
+nav .nav-item
+{
+    font-size: 150%;
+}
+
+nav .nav-link
+{
+    margin-right: 2vw;
+}
+
+body
+{
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+a:link
+{
+    text-decoration: none;
+    color: #2e944b;
+}
+
+a:visited
+{
+    text-decoration: none;
+    color: #2e944b;
+}
+
+#homebox {
+    display: flex;
+    flex-direction: row;
+}
+
+.hb-s {
+    flex: 10%;
+}
+
+#hb-main {
+    flex: 80%;
+    flex-direction: column;
+    align-items: left;
+    background-color: lightgray;
+    filter: drop-shadow(0 0 0.75rem #2e944b);
+}
+
+.hb-i {
+    flex: 20%;
+    display: block;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+}
+
+.hb-b {
+    padding: 2.2%;
+    margin: 0px;
+    flex: 80%;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.blurb {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    padding-bottom: 10px;
+}
+
+#welcome {
+    font-size: 3em;
+    padding: 1em;
+    padding-top: 0.5em;
+    color: #2e944b;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.py-5 {
+    padding-top: 0px!important;
+}
+
+.line
+{
+    margin: 0px;
+    color: #2e944b;
+    opacity: 70%;
+}
+
+.container-fluid
+{
+    padding:0px;
+}
+
+  .sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+.table
+{
+    margin-top: 2vw;
+}
