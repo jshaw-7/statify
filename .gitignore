@@ -1,0 +1,5 @@
+.cache-user-top-read playlist-read-private user-read-currently-playing
+.cache
+__pycache__/
+flask_session/
+Procfile
